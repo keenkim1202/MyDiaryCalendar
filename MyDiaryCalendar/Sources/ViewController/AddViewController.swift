@@ -10,8 +10,10 @@ import RealmSwift
 
 class AddViewController: UIViewController {
   
+  // MARK: Properties
   let localRealm = try! Realm()
   
+  //MARK: UI
   @IBOutlet weak var titleTextField: UITextField!
   @IBOutlet weak var datePicker: UIButton!
   @IBOutlet weak var contentTextField: UITextView!
@@ -30,9 +32,9 @@ class AddViewController: UIViewController {
   }
   
   @objc func onSave() {
-    let task = UserDiary(diaryTitle: titleTextField.text!, content: contentTextField.text!, writtenDate: Date(), regDate: Date()) // write할 task 생성
-    try! localRealm.write { // realm에 써라. (CRUD)
-      localRealm.add(task) // 그 중 Add를 해줘라.
+    let task = UserDiary(diaryTitle: titleTextField.text!, content: contentTextField.text!, writtenDate: Date(), regDate: Date())
+    try! localRealm.write {
+      localRealm.add(task)
     }
     
     self.dismiss(animated: true, completion: nil)

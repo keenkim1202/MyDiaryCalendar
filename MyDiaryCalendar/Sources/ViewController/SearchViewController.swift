@@ -12,7 +12,7 @@ class SearchViewController: UIViewController {
   
   // MARK: Realm
   let localRealm = try! Realm()
-  var tasks: Results<UserDiary>! // 아무것도 없으면 ! 해도 0개로 리턴됨
+  var tasks: Results<UserDiary>!
 
   // MARK: UI
   @IBOutlet weak var tableView: UITableView!
@@ -25,8 +25,15 @@ class SearchViewController: UIViewController {
     tableView.delegate = self
     tableView.dataSource = self
     
+//    print("Realm Location: ", localRealm.configuration.fileURL)
+//    print("tasks: \(tasks)")
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(true)
+    
     tasks = localRealm.objects(UserDiary.self)
-    print("tasks: \(tasks)")
+    tableView.reloadData()
   }
   
 }
