@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PDt-t6-NXg">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--설정-->
+        <scene sceneID="JVG-y2-FWs">
+            <objects>
+                <viewController id="h1t-70-eFt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="468-R5-jEZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="487-Ti-lkv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="설정" image="gear" catalog="system" id="SU5-5h-BYA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lTh-xt-x4i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1843" y="206"/>
+        </scene>
+        <!--검색-->
+        <scene sceneID="S4F-eT-EaI">
+            <objects>
+                <viewController id="jOv-jJ-si8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QyW-Ob-n8Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="a4U-j2-grC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="HMg-HB-cjm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wyO-F3-udK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1032" y="206"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="hjD-8V-Sz2">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="PDt-t6-NXg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kaP-4e-W0v">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="RZi-aS-Lwa" kind="relationship" relationship="viewControllers" id="183-AY-gHT"/>
+                        <segue destination="jOv-jJ-si8" kind="relationship" relationship="viewControllers" id="dIm-wD-iYf"/>
+                        <segue destination="02H-2o-Lpa" kind="relationship" relationship="viewControllers" id="kEB-C3-BJg"/>
+                        <segue destination="h1t-70-eFt" kind="relationship" relationship="viewControllers" id="sSK-5y-i14"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tde-BC-Wb1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121.73913043478262" y="104.46428571428571"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="0Lf-KY-DcY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="RZi-aS-Lwa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="vEw-Em-uIB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7xe-l3-URg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1032" y="-491"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="pJ5-KX-axg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Calendar" id="02H-2o-Lpa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="MHP-Q5-V9N"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8OP-1d-ve7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1842" y="-492"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
