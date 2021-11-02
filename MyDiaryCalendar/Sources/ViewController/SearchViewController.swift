@@ -51,6 +51,7 @@ extension SearchViewController: UITableViewDataSource {
     cell.dateLabel.text = "\(row.writtenDate)"
     cell.contentLabel.text = row.content
     
+    cell.cellConfigure()
     return  cell
   }
 }
