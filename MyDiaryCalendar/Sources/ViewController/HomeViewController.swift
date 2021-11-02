@@ -13,13 +13,13 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    title = "HOME"
+    title = "홈"
     navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(presentAddVC))
   }
   
   @objc func presentAddVC() {
-    let storyboard = UIStoryboard.init(name: "Content", bundle: nil)
-    guard let vc = storyboard.instantiateViewController(identifier: "addVC") as? AddViewController else { return }
+    let contentStoryboard = UIStoryboard.init(name: "Content", bundle: nil)
+    let vc = contentStoryboard.instantiateViewController(withIdentifier: "addVC") as! AddViewController
     
     let nav = UINavigationController(rootViewController: vc)
     nav.modalPresentationStyle = .fullScreen

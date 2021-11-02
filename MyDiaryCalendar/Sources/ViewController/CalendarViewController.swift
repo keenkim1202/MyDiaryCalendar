@@ -13,6 +13,7 @@ class CalendarViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    title = "달력"
   }
 
 }

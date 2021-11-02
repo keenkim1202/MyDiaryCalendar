@@ -28,6 +28,7 @@
 		1C699A7D272FE15500E00D15 /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C699A7C272FE15500E00D15 /* Content.storyboard */; };
 		1CC3C7BE2730C7410039135A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1CC3C7BD2730C7410039135A /* Realm */; };
 		1CC3C7C02730C7410039135A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1CC3C7BF2730C7410039135A /* RealmSwift */; };
+		1CC3C7C32730C9B80039135A /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC3C7C22730C9B80039135A /* RealmModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		1C699A78272FE0C100E00D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyDiaryCalendar/Resources/Storyboards/Base.lproj/Search.storyboard; sourceTree = "<group>"; };
 		1C699A7A272FE0CC00E00D15 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		1C699A7C272FE15500E00D15 /* Content.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Content.storyboard; sourceTree = "<group>"; };
+		1CC3C7C22730C9B80039135A /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		1C435DB1272FD9FE001849AE /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				1CC3C7C12730C9AD0039135A /* Realm */,
 				1C435D9C272FD9EF001849AE /* AppDelegate.swift */,
 				1C435D9E272FD9EF001849AE /* SceneDelegate.swift */,
 				1C435DBC272FDAF3001849AE /* ViewController */,
@@ -158,6 +161,14 @@
 				1C699A7C272FE15500E00D15 /* Content.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		1CC3C7C12730C9AD0039135A /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				1CC3C7C22730C9B80039135A /* RealmModel.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +262,7 @@
 				1C435DC2272FDB20001849AE /* CalendarViewController.swift in Sources */,
 				1C435DC4272FDB27001849AE /* SearchViewController.swift in Sources */,
 				1C435DC0272FDB1A001849AE /* HomeViewController.swift in Sources */,
+				1CC3C7C32730C9B80039135A /* RealmModel.swift in Sources */,
 				1C435DC6272FDB2F001849AE /* SettingViewController.swift in Sources */,
 				1C435D9D272FD9EF001849AE /* AppDelegate.swift in Sources */,
 				1C435D9F272FD9EF001849AE /* SceneDelegate.swift in Sources */,

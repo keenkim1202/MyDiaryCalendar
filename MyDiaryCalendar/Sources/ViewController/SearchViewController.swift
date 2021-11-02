@@ -13,5 +13,6 @@ class SearchViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    title = "검색"
   }
 }
