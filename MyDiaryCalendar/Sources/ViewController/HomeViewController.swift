@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     
     let nav = UINavigationController(rootViewController: vc)
     nav.modalPresentationStyle = .fullScreen
-    self.present(vc, animated: true, completion: nil)
+    self.present(nav, animated: true, completion: nil)
   }
   
 }
