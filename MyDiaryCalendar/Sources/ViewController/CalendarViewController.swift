@@ -8,10 +8,11 @@
 import UIKit
 
 class CalendarViewController: UIViewController {
-  
+
+  // MARK: View Life-Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
   }
-  
+
 }

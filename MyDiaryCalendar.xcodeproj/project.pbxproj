@@ -21,11 +21,13 @@
 		1C435DC4272FDB27001849AE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C435DC3272FDB27001849AE /* SearchViewController.swift */; };
 		1C435DC6272FDB2F001849AE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C435DC5272FDB2F001849AE /* SettingViewController.swift */; };
 		1C435DC8272FDB61001849AE /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C435DC7272FDB61001849AE /* AddViewController.swift */; };
-		1C435DCA272FDBC1001849AE /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C435DC9272FDBC1001849AE /* Home.storyboard */; };
-		1C435DCC272FDBCD001849AE /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C435DCB272FDBCD001849AE /* Content.storyboard */; };
-		1C435DCE272FDC69001849AE /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C435DCD272FDC69001849AE /* Calendar.storyboard */; };
-		1C435DD2272FDC7D001849AE /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C435DD1272FDC7D001849AE /* Setting.storyboard */; };
-		1C435DD5272FDDDE001849AE /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C435DD4272FDDDE001849AE /* Search.storyboard */; };
+		1C699A74272FE0AA00E00D15 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C699A72272FE0AA00E00D15 /* Home.storyboard */; };
+		1C699A76272FE0B600E00D15 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C699A75272FE0B600E00D15 /* Calendar.storyboard */; };
+		1C699A79272FE0C100E00D15 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C699A77272FE0C100E00D15 /* Search.storyboard */; };
+		1C699A7B272FE0CC00E00D15 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C699A7A272FE0CC00E00D15 /* Setting.storyboard */; };
+		1C699A7D272FE15500E00D15 /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C699A7C272FE15500E00D15 /* Content.storyboard */; };
+		1CC3C7BE2730C7410039135A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1CC3C7BD2730C7410039135A /* Realm */; };
+		1CC3C7C02730C7410039135A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1CC3C7BF2730C7410039135A /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,11 +49,11 @@
 		1C435DC3272FDB27001849AE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1C435DC5272FDB2F001849AE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1C435DC7272FDB61001849AE /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		1C435DC9272FDBC1001849AE /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		1C435DCB272FDBCD001849AE /* Content.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Content.storyboard; sourceTree = "<group>"; };
-		1C435DCD272FDC69001849AE /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
-		1C435DD1272FDC7D001849AE /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
-		1C435DD4272FDDDE001849AE /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		1C699A73272FE0AA00E00D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyDiaryCalendar/Resources/Storyboards/Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		1C699A75272FE0B600E00D15 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		1C699A78272FE0C100E00D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyDiaryCalendar/Resources/Storyboards/Base.lproj/Search.storyboard; sourceTree = "<group>"; };
+		1C699A7A272FE0CC00E00D15 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		1C699A7C272FE15500E00D15 /* Content.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Content.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CC3C7C02730C7410039135A /* RealmSwift in Frameworks */,
+				1CC3C7BE2730C7410039135A /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,11 +151,11 @@
 			isa = PBXGroup;
 			children = (
 				1C435DA2272FD9EF001849AE /* Main.storyboard */,
-				1C435DC9272FDBC1001849AE /* Home.storyboard */,
-				1C435DCB272FDBCD001849AE /* Content.storyboard */,
-				1C435DCD272FDC69001849AE /* Calendar.storyboard */,
-				1C435DD1272FDC7D001849AE /* Setting.storyboard */,
-				1C435DD4272FDDDE001849AE /* Search.storyboard */,
+				1C699A7A272FE0CC00E00D15 /* Setting.storyboard */,
+				1C699A77272FE0C100E00D15 /* Search.storyboard */,
+				1C699A75272FE0B600E00D15 /* Calendar.storyboard */,
+				1C699A72272FE0AA00E00D15 /* Home.storyboard */,
+				1C699A7C272FE15500E00D15 /* Content.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -172,6 +176,10 @@
 			dependencies = (
 			);
 			name = MyDiaryCalendar;
+			packageProductDependencies = (
+				1CC3C7BD2730C7410039135A /* Realm */,
+				1CC3C7BF2730C7410039135A /* RealmSwift */,
+			);
 			productName = MyDiaryCalendar;
 			productReference = 1C435D99272FD9EF001849AE /* MyDiaryCalendar.app */;
 			productType = "com.apple.product-type.application";
@@ -201,6 +209,9 @@
 				ko,
 			);
 			mainGroup = 1C435D90272FD9EF001849AE;
+			packageReferences = (
+				1CC3C7BC2730C7410039135A /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 1C435D9A272FD9EF001849AE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -215,16 +226,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C435DCE272FDC69001849AE /* Calendar.storyboard in Resources */,
-				1C435DCA272FDBC1001849AE /* Home.storyboard in Resources */,
+				1C699A74272FE0AA00E00D15 /* Home.storyboard in Resources */,
 				1C435DB7272FDA5F001849AE /* SCDream1.otf in Resources */,
 				1C435DB8272FDA5F001849AE /* SCDream5.otf in Resources */,
 				1C435DB9272FDA5F001849AE /* SCDream9.otf in Resources */,
-				1C435DCC272FDBCD001849AE /* Content.storyboard in Resources */,
+				1C699A79272FE0C100E00D15 /* Search.storyboard in Resources */,
+				1C699A7D272FE15500E00D15 /* Content.storyboard in Resources */,
+				1C699A76272FE0B600E00D15 /* Calendar.storyboard in Resources */,
 				1C435DA9272FD9F0001849AE /* LaunchScreen.storyboard in Resources */,
-				1C435DD5272FDDDE001849AE /* Search.storyboard in Resources */,
+				1C699A7B272FE0CC00E00D15 /* Setting.storyboard in Resources */,
 				1C435DA6272FD9F0001849AE /* Assets.xcassets in Resources */,
-				1C435DD2272FDC7D001849AE /* Setting.storyboard in Resources */,
 				1C435DA4272FD9EF001849AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +277,22 @@
 				1C435DBB272FDA9C001849AE /* ko */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1C699A72272FE0AA00E00D15 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C699A73272FE0AA00E00D15 /* Base */,
+			);
+			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
+		1C699A77272FE0C100E00D15 /* Search.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C699A78272FE0C100E00D15 /* Base */,
+			);
+			name = Search.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -467,6 +494,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1CC3C7BC2730C7410039135A /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1CC3C7BD2730C7410039135A /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CC3C7BC2730C7410039135A /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		1CC3C7BF2730C7410039135A /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CC3C7BC2730C7410039135A /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1C435D91272FD9EF001849AE /* Project object */;
 }
