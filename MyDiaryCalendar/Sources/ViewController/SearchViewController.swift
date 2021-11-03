@@ -85,9 +85,22 @@ extension SearchViewController: UITableViewDelegate {
 //    }
 
     // 2. 일괄 수정
+//    try! localRealm.write {
+//      tasks.setValue(Date(), forKey: "writtenDate")
+//      tasks.setValue("일괄 제목 수정", forKey: "diaryTitle")
+//      tableView.reloadData()
+//    }
+    
+    // 3. 수정: pk 기준으로 수정할 때 사용하지만 권장하진 않음. (업데이트 하고자 작성한 값 이외에는 초기화가 되어버림)
+//    try! localRealm.write {
+//      let update = UserDiary(value: ["_id": taskToUpdate._id, "diaryTitle": "얘만 수정"])
+//      localRealm.add(update, update: .modified)
+//      tableView.reloadData()
+//    }
+    
+    // 4. 기입한 프로퍼티에 대한 수정
     try! localRealm.write {
-      tasks.setValue(Date(), forKey: "writtenDate")
-      tasks.setValue("일괄 제목 수정", forKey: "diaryTitle")
+      localRealm.create(UserDiary.self, value: ["_id": taskToUpdate._id, "diaryTitle": "얘만 수정!"], update: .modified)
       tableView.reloadData()
     }
   }
