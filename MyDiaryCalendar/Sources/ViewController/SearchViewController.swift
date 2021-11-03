@@ -76,13 +76,20 @@ extension SearchViewController: UITableViewDelegate {
   // 본래 화면 전환 + 값전달 후 새로운 화면에서 수정이 적합
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let taskToUpdate = tasks[indexPath.row]
-    
+  
+    // 1. 수정 - 레코드에 대한 값 수정
+//    try! localRealm.write {
+//      taskToUpdate.diaryTitle = "수정된 타이틀"
+//      taskToUpdate.content = "수정된 내용"
+//      tableView.reloadData()
+//    }
+
+    // 2. 일괄 수정
     try! localRealm.write {
-      taskToUpdate.diaryTitle = "수정된 타이틀"
-      taskToUpdate.content = "수정된 내용"
+      tasks.setValue(Date(), forKey: "writtenDate")
+      tasks.setValue("일괄 제목 수정", forKey: "diaryTitle")
       tableView.reloadData()
     }
-
   }
 }
 
