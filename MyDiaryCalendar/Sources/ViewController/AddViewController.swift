@@ -17,6 +17,7 @@ class AddViewController: UIViewController {
   @IBOutlet weak var titleTextField: UITextField!
   @IBOutlet weak var datePicker: UIButton!
   @IBOutlet weak var contentTextField: UITextView!
+  @IBOutlet weak var contentImageView: UIImageView!
   
   // MARK: View Life-Cycle
   override func viewDidLoad() {
@@ -39,6 +40,7 @@ class AddViewController: UIViewController {
     
     try! localRealm.write {
       localRealm.add(task)
+      saveImageToDocumentDirectory(imageName: "\(task._id).jpg", image: contentImageView.image!)
     }
     self.dismiss(animated: true, completion: nil)
   }
@@ -74,6 +76,5 @@ class AddViewController: UIViewController {
     } catch {
       print("WRITE FAILED")
     }
-    
   }
 }

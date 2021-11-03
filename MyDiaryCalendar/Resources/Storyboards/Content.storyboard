@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ctc-8J-4Hw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ctc-8J-4Hw">
                                 <rect key="frame" x="0.0" y="45" width="414" height="411.5"/>
                                 <color key="backgroundColor" red="0.90755695188123675" green="1" blue="0.90731922611283855" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.23971675350685037" green="0.3333333432674408" blue="0.23499004687613972" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -64,6 +64,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contentImageView" destination="Ctc-8J-4Hw" id="eDR-7j-vnl"/>
                         <outlet property="contentTextField" destination="zup-Nd-LCD" id="9mT-16-Ez3"/>
                         <outlet property="datePicker" destination="wwA-7H-LTH" id="css-TL-4lc"/>
                         <outlet property="titleTextField" destination="crX-8a-qQf" id="UCf-7Z-K0K"/>
