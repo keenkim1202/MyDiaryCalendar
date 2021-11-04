@@ -10,8 +10,16 @@ import RealmSwift
 
 class AddViewController: UIViewController {
   
+  // MARK: Enum
+  enum ViewType {
+    case add
+    case udpate
+  }
+  
   // MARK: Properties
   let localRealm = try! Realm()
+  var viewType: ViewType = .add
+  var diary: UserDiary?
   
   //MARK: UI
   @IBOutlet weak var titleTextField: UITextField!
@@ -23,7 +31,14 @@ class AddViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    title = "일기 작성"
+    if let diary = diary {
+      title = "일기 수정"
+      titleTextField.text = diary.diaryTitle
+      contentTextField.text = diary.content
+    } else {
+      title = "일기 작성"
+    }
+    
     navigationItem.leftBarButtonItem = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(onDone))
     navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .done, target: self, action: #selector(onSave))
   }

@@ -73,36 +73,16 @@ extension SearchViewController: UITableViewDelegate {
     return 120
   }
   
-  // 본래 화면 전환 + 값전달 후 새로운 화면에서 수정이 적합
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let taskToUpdate = tasks[indexPath.row]
-  
-    // 1. 수정 - 레코드에 대한 값 수정
-//    try! localRealm.write {
-//      taskToUpdate.diaryTitle = "수정된 타이틀"
-//      taskToUpdate.content = "수정된 내용"
-//      tableView.reloadData()
-//    }
-
-    // 2. 일괄 수정
-//    try! localRealm.write {
-//      tasks.setValue(Date(), forKey: "writtenDate")
-//      tasks.setValue("일괄 제목 수정", forKey: "diaryTitle")
-//      tableView.reloadData()
-//    }
+    let contentStoryboard = UIStoryboard.init(name: "Content", bundle: nil)
+    let vc = contentStoryboard.instantiateViewController(withIdentifier: "addVC") as! AddViewController
     
-    // 3. 수정: pk 기준으로 수정할 때 사용하지만 권장하진 않음. (업데이트 하고자 작성한 값 이외에는 초기화가 되어버림)
-//    try! localRealm.write {
-//      let update = UserDiary(value: ["_id": taskToUpdate._id, "diaryTitle": "얘만 수정"])
-//      localRealm.add(update, update: .modified)
-//      tableView.reloadData()
-//    }
+    let selectedDiary = tasks[indexPath.row]
+    vc.diary = selectedDiary
     
-    // 4. 기입한 프로퍼티에 대한 수정
-    try! localRealm.write {
-      localRealm.create(UserDiary.self, value: ["_id": taskToUpdate._id, "diaryTitle": "얘만 수정!"], update: .modified)
-      tableView.reloadData()
-    }
+    let nav = UINavigationController(rootViewController: vc)
+    nav.modalPresentationStyle = .fullScreen
+    self.present(nav, animated: true, completion: nil)
   }
 }
 
