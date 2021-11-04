@@ -20,10 +20,23 @@
  - 벡업 완료 시점에
  - progress + UI interacton 허용
  - 공유화면
+
+ */
+
+/*
+ 복구하기
+ - 사용자의 아이폰 저장 공간 확인
+ - 파일 앱
+  - zip : zip 선택 > unzip하기 > 백업 파일 이름 확인 (폴더, 파일 이름 확인)
+  - 파일 이름 확인 결과, 정상적인 파일이 아니면 alert문 띠우기
+ - 백업 데이터 선택
+ - 백업 파일 확인
+ - 백업 당시 데이터랑 지금 현재 앱에서 사용중인 데이터를 어떻게 합칠 것인가
  */
 
 import UIKit
 import Zip
+import MobileCoreServices
 
 class SettingViewController: UIViewController {
   
@@ -94,4 +107,22 @@ class SettingViewController: UIViewController {
     }
   }
   
+  @IBAction func onRestore(_ sender: UIButton) {
+    // 복구1. 파일앱 열기 + 확장자 : MobileCoreServices 임포트 하기
+    let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypeArchive as String], in: .import)
+    documentPicker.delegate = self
+//    documentPicker.allowsMultipleSelection // 파일 여러개 선택하기 <- 파일 복구의 입장에서는 필요 없지만 알아두자.
+    self.present(documentPicker, animated: true, completion: nil)
+  }
+}
+
+// MARK: - Extension - UIDocumentPickerDelegate
+extension SettingViewController: UIDocumentPickerDelegate {
+  func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+    print(#function)
+  }
+  
+  func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+    print(#function)
+  }
 }

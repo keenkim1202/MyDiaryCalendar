@@ -38,6 +38,14 @@
                                     <action selector="onActivityVC:" destination="h1t-70-eFt" eventType="touchUpInside" id="8vw-AJ-NCp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYd-Xb-f3q">
+                                <rect key="frame" x="174" y="548" width="73" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="복구하기"/>
+                                <connections>
+                                    <action selector="onRestore:" destination="h1t-70-eFt" eventType="touchUpInside" id="uWV-WY-Ikx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="487-Ti-lkv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -47,10 +55,13 @@
                             <constraint firstItem="4ox-sv-1JS" firstAttribute="leading" secondItem="487-Ti-lkv" secondAttribute="leading" constant="171" id="Ijh-M8-2QQ"/>
                             <constraint firstItem="4ox-sv-1JS" firstAttribute="top" secondItem="PGf-mI-gpC" secondAttribute="bottom" constant="51" id="Jt0-IQ-Y2S"/>
                             <constraint firstItem="487-Ti-lkv" firstAttribute="trailing" secondItem="AX6-lc-4L0" secondAttribute="trailing" constant="180" id="NGx-4R-1sr"/>
+                            <constraint firstItem="iYd-Xb-f3q" firstAttribute="leading" secondItem="487-Ti-lkv" secondAttribute="leading" constant="174" id="PyF-0d-KNY"/>
+                            <constraint firstItem="487-Ti-lkv" firstAttribute="trailing" secondItem="iYd-Xb-f3q" secondAttribute="trailing" constant="167" id="Y3S-uo-7sn"/>
                             <constraint firstItem="PGf-mI-gpC" firstAttribute="leading" secondItem="487-Ti-lkv" secondAttribute="leading" constant="157" id="dNP-Su-CXr"/>
                             <constraint firstItem="487-Ti-lkv" firstAttribute="trailing" secondItem="PGf-mI-gpC" secondAttribute="trailing" constant="162" id="jsC-A9-0OS"/>
                             <constraint firstItem="AX6-lc-4L0" firstAttribute="top" secondItem="487-Ti-lkv" secondAttribute="top" constant="394" id="k6g-7u-CMp"/>
                             <constraint firstItem="487-Ti-lkv" firstAttribute="trailing" secondItem="4ox-sv-1JS" secondAttribute="trailing" constant="170" id="rKl-89-iQ6"/>
+                            <constraint firstItem="iYd-Xb-f3q" firstAttribute="top" secondItem="AX6-lc-4L0" secondAttribute="bottom" constant="89" id="yZD-9m-jZz"/>
                             <constraint firstItem="AX6-lc-4L0" firstAttribute="leading" secondItem="487-Ti-lkv" secondAttribute="leading" constant="181" id="zfl-Zt-I82"/>
                         </constraints>
                     </view>
