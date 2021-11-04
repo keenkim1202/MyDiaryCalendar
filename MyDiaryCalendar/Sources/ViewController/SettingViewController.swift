@@ -27,7 +27,7 @@ import Zip
 
 class SettingViewController: UIViewController {
   
-  // MARK: View Life-Cycle
+  // MARK: - View Life-Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -47,7 +47,17 @@ class SettingViewController: UIViewController {
     }
   }
   
-  // MARK: Action
+  // MARK: - Present Activity VC
+  func presentActivityVC() {
+    let vc = UIActivityViewController(activityItems: ["이것은 액티비티 뷰컨입니다."], applicationActivities: nil)
+    self.present(vc, animated: true, completion: nil)
+  }
+  
+  // MARK: - Action
+  @IBAction func onActivityVC(_ sender: UIButton) {
+    presentActivityVC()
+  }
+  
   @IBAction func onBackUp(_ sender: UIButton) {
     // 4. 백업한 파일에 대한 URL 배열
     var urlPaths = [URL]()

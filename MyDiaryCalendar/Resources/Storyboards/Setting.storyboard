@@ -16,25 +16,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AX6-lc-4L0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AX6-lc-4L0">
                                 <rect key="frame" x="181" y="438" width="53" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ox-sv-1JS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ox-sv-1JS">
                                 <rect key="frame" x="171" y="333" width="73" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="백업하기"/>
                                 <connections>
                                     <action selector="onBackUp:" destination="h1t-70-eFt" eventType="touchUpInside" id="j9p-IR-Dk0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGf-mI-gpC">
+                                <rect key="frame" x="157" y="251" width="95" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Activity VC"/>
+                                <connections>
+                                    <action selector="onActivityVC:" destination="h1t-70-eFt" eventType="touchUpInside" id="8vw-AJ-NCp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="487-Ti-lkv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="487-Ti-lkv" firstAttribute="bottom" secondItem="AX6-lc-4L0" secondAttribute="bottom" constant="403" id="0gE-nc-Q0E"/>
+                            <constraint firstItem="AX6-lc-4L0" firstAttribute="top" secondItem="4ox-sv-1JS" secondAttribute="bottom" constant="74" id="G5d-Gd-UgV"/>
+                            <constraint firstItem="4ox-sv-1JS" firstAttribute="leading" secondItem="487-Ti-lkv" secondAttribute="leading" constant="171" id="Ijh-M8-2QQ"/>
+                            <constraint firstItem="4ox-sv-1JS" firstAttribute="top" secondItem="PGf-mI-gpC" secondAttribute="bottom" constant="51" id="Jt0-IQ-Y2S"/>
+                            <constraint firstItem="487-Ti-lkv" firstAttribute="trailing" secondItem="AX6-lc-4L0" secondAttribute="trailing" constant="180" id="NGx-4R-1sr"/>
+                            <constraint firstItem="PGf-mI-gpC" firstAttribute="leading" secondItem="487-Ti-lkv" secondAttribute="leading" constant="157" id="dNP-Su-CXr"/>
+                            <constraint firstItem="487-Ti-lkv" firstAttribute="trailing" secondItem="PGf-mI-gpC" secondAttribute="trailing" constant="162" id="jsC-A9-0OS"/>
+                            <constraint firstItem="AX6-lc-4L0" firstAttribute="top" secondItem="487-Ti-lkv" secondAttribute="top" constant="394" id="k6g-7u-CMp"/>
+                            <constraint firstItem="487-Ti-lkv" firstAttribute="trailing" secondItem="4ox-sv-1JS" secondAttribute="trailing" constant="170" id="rKl-89-iQ6"/>
+                            <constraint firstItem="AX6-lc-4L0" firstAttribute="leading" secondItem="487-Ti-lkv" secondAttribute="leading" constant="181" id="zfl-Zt-I82"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="설정" image="gear" catalog="system" id="SU5-5h-BYA"/>
                 </viewController>
