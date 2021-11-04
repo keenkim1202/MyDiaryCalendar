@@ -9,20 +9,21 @@
  백업하기
  
  [ 사용자의 아이폰 저장 공간 확인 ]
-    - 부족: 백업 불가
+ - 부족: 백업 불가
  [ 백업 진행 ]
-    - 어떤 데이터도 없는 경우라면 백업할 데이터가 없다고 안내
-    - 백업 가능한 파일 여부 확인
-      - 1) realm(realm에 대한 데이터가 1개라도 있는지)
-      - 2) folder(백업할 파일이 있는지)
-    - progress + UI interaction 금지
-  [ zip ]
-    - 벡업 완료 시점에
-      - progress + UI interacton 허용
-    - 공유화면
+ - 어떤 데이터도 없는 경우라면 백업할 데이터가 없다고 안내
+ - 백업 가능한 파일 여부 확인
+ - 1) realm(realm에 대한 데이터가 1개라도 있는지)
+ - 2) folder(백업할 파일이 있는지)
+ - progress + UI interaction 금지
+ [ zip ]
+ - 벡업 완료 시점에
+ - progress + UI interacton 허용
+ - 공유화면
  */
 
 import UIKit
+import Zip
 
 class SettingViewController: UIViewController {
   
@@ -66,8 +67,14 @@ class SettingViewController: UIViewController {
     }
     
     // 3. 백업
-    
+    /// : 4번 배열에 대해 압축 파일 만들기
+    do {
+      let zipFilePath = try Zip.quickZipFiles(urlPaths, fileName: "archive") // Zip
+      print("압축 경로: \(zipFilePath)")
+    }
+    catch {
+      print("Something went wrong")
+    }
   }
-  
   
 }
