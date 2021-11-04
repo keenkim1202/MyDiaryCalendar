@@ -49,7 +49,13 @@ class SettingViewController: UIViewController {
   
   // MARK: - Present Activity VC
   func presentActivityVC() {
-    let vc = UIActivityViewController(activityItems: ["이것은 액티비티 뷰컨입니다."], applicationActivities: nil)
+    // 압축 파일 경로 가져오기
+    /// : 지금은 고정된 파일 이름이므로 archive.zip을 문자열로 작성했지만, 상황에 따라 유동적으로 대입해주면 된다.
+    let fileName = (documnetDirectoryPath()! as NSString).appendingPathComponent("archive.zip")
+    let fileURL = URL(fileURLWithPath: fileName)
+    
+    
+    let vc = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
     self.present(vc, animated: true, completion: nil)
   }
   
@@ -81,6 +87,7 @@ class SettingViewController: UIViewController {
     do {
       let zipFilePath = try Zip.quickZipFiles(urlPaths, fileName: "archive") // Zip
       print("압축 경로: \(zipFilePath)")
+      presentActivityVC()
     }
     catch {
       print("Something went wrong")
