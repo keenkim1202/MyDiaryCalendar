@@ -8,6 +8,8 @@
 import UIKit
 import RealmSwift
 
+// TODO: Realm / Document 에 이미지 정보 저장하는 코드 작성하기
+
 class AddViewController: UIViewController {
   
   // MARK: Enum
@@ -18,6 +20,7 @@ class AddViewController: UIViewController {
   
   // MARK: Properties
   let localRealm = try! Realm()
+  let imagePicker = UIImagePickerController()
   var viewType: ViewType = .add
   var diary: UserDiary?
   
@@ -31,20 +34,74 @@ class AddViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    imagePicker.delegate = self
+    configureNAV()
+  }
+  
+  func configureNAV() {
+    let cancelBarButton = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(onDone))
+    let saveBarButton = UIBarButtonItem(title: "저장", style: .done, target: self, action: #selector(onSave))
+    let imageAddBarButton = UIBarButtonItem(title: "이미지 추가", style: .done, target: self, action: #selector(onAddImage))
+    
+    cancelBarButton.tintColor = .red
+    saveBarButton.tintColor = .systemGreen
+    
+    navigationItem.leftBarButtonItem = cancelBarButton
+    navigationItem.rightBarButtonItems = [saveBarButton, imageAddBarButton]
+    
     if let diary = diary {
       viewType = .update
       title = "일기 수정"
       titleTextField.text = diary.diaryTitle
       contentTextField.text = diary.content
+      imageAddBarButton.title = "이미지 변경"
     } else {
       title = "일기 작성"
     }
-    navigationItem.leftBarButtonItem = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(onDone))
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .done, target: self, action: #selector(onSave))
   }
   
+  // MARK: Photo Library & Camera Access
+  func openLibrary() {
+    imagePicker.sourceType = .photoLibrary
+    present(imagePicker, animated: false, completion: nil)
+  }
+  
+  func openCamera() {
+    if(UIImagePickerController .isSourceTypeAvailable(.camera)) {
+      imagePicker.sourceType = .camera
+      present(imagePicker, animated: false, completion: nil)
+    }
+    else{
+      print("Camera not available")
+    }
+  }
+  
+  // MARK: - BarButtonItem - Actions
   @objc func onDone() {
     self.dismiss(animated: true, completion: nil)
+  }
+  
+  @objc func onAddImage() {
+    let alert =  UIAlertController(title: "일기 이미지 추가", message: "어디에서 이미지를 불러오시겠습니까?", preferredStyle: .actionSheet)
+    let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in
+      self.openLibrary()
+    }
+    
+    let camera =  UIAlertAction(title: "카메라", style: .default) { (action) in
+      self.openCamera()
+    }
+    
+    let defaultImage =  UIAlertAction(title: "기본 이미지로 변경", style: .default) { (action) in
+      self.contentImageView.image = UIImage(systemName: "folder")
+    }
+    
+    let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+    
+    alert.addAction(library)
+    alert.addAction(camera)
+    alert.addAction(defaultImage)
+    alert.addAction(cancel)
+    present(alert, animated: true, completion: nil)
   }
   
   @objc func onSave() {
@@ -95,5 +152,21 @@ class AddViewController: UIViewController {
     } catch {
       print("WRITE FAILED")
     }
+  }
+  
+  // MARK: - Actions
+  @IBAction func onDatePickerButton(_ sender: UIButton) {
+    
+  }
+}
+
+// MARK: - Extension - UIImagePickerControllerDelegate & UINavigationControllerDelegate
+extension AddViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+      contentImageView.image = image
+      print(info)
+    }
+    dismiss(animated: true, completion: nil)
   }
 }

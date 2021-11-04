@@ -17,27 +17,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ctc-8J-4Hw">
-                                <rect key="frame" x="0.0" y="45" width="414" height="411.5"/>
+                                <rect key="frame" x="20" y="65" width="374" height="371.5"/>
                                 <color key="backgroundColor" red="0.90755695188123675" green="1" blue="0.90731922611283855" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.23971675350685037" green="0.3333333432674408" blue="0.23499004687613972" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ctc-8J-4Hw" secondAttribute="height" multiplier="1:1" id="lyr-hX-ml5"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="제목을 입력해주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="crX-8a-qQf">
-                                <rect key="frame" x="21" y="508" width="374" height="31"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="제목을 입력해주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="crX-8a-qQf">
+                                <rect key="frame" x="20" y="488" width="374" height="31"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwA-7H-LTH">
-                                <rect key="frame" x="20" y="569" width="374" height="31"/>
+                                <rect key="frame" x="20" y="549" width="374" height="31"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="날짜 피커"/>
+                                <connections>
+                                    <action selector="onDatePickerButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1Jw-GM-qUK"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="일기 내용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zup-Nd-LCD">
-                                <rect key="frame" x="20" y="630" width="374" height="232"/>
+                                <rect key="frame" x="20" y="610" width="374" height="252"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -48,18 +51,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wwA-7H-LTH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="87B-0U-krO"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ctc-8J-4Hw" secondAttribute="trailing" id="8jg-hz-inf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ctc-8J-4Hw" secondAttribute="trailing" constant="20" id="8jg-hz-inf"/>
                             <constraint firstItem="zup-Nd-LCD" firstAttribute="top" secondItem="wwA-7H-LTH" secondAttribute="bottom" constant="30" id="AJY-h6-lx1"/>
                             <constraint firstItem="wwA-7H-LTH" firstAttribute="height" secondItem="crX-8a-qQf" secondAttribute="height" id="Lvb-4O-sGQ"/>
                             <constraint firstItem="crX-8a-qQf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Ofa-M6-pTF"/>
                             <constraint firstItem="zup-Nd-LCD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Udy-C7-laU"/>
-                            <constraint firstItem="Ctc-8J-4Hw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="UzY-cf-e9b"/>
+                            <constraint firstItem="Ctc-8J-4Hw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="UzY-cf-e9b"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="zup-Nd-LCD" secondAttribute="bottom" id="VAL-yU-GwQ"/>
                             <constraint firstItem="wwA-7H-LTH" firstAttribute="top" secondItem="crX-8a-qQf" secondAttribute="bottom" constant="30" id="fBL-kH-1YJ"/>
                             <constraint firstItem="crX-8a-qQf" firstAttribute="top" secondItem="Ctc-8J-4Hw" secondAttribute="bottom" constant="50" id="izX-Xs-Zs1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wwA-7H-LTH" secondAttribute="trailing" constant="20" id="ljs-73-Sa2"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zup-Nd-LCD" secondAttribute="trailing" constant="20" id="tQY-6h-1f2"/>
-                            <constraint firstItem="Ctc-8J-4Hw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="w59-1C-HwT"/>
+                            <constraint firstItem="Ctc-8J-4Hw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="w59-1C-HwT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="crX-8a-qQf" secondAttribute="trailing" constant="20" id="z8F-zm-0Ao"/>
                         </constraints>
                     </view>
