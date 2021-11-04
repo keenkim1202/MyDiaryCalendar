@@ -23,7 +23,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ox-sv-1JS">
-                                <rect key="frame" x="171" y="333" width="73" height="31"/>
+                                <rect key="frame" x="30" y="333" width="354" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="백업하기"/>
                                 <connections>
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGf-mI-gpC">
-                                <rect key="frame" x="157" y="251" width="95" height="31"/>
+                                <rect key="frame" x="30" y="251" width="354" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Activity VC"/>
                                 <connections>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYd-Xb-f3q">
-                                <rect key="frame" x="174" y="548" width="73" height="31"/>
+                                <rect key="frame" x="30" y="548" width="354" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="복구하기"/>
                                 <connections>
@@ -52,15 +52,15 @@
                         <constraints>
                             <constraint firstItem="487-Ti-lkv" firstAttribute="bottom" secondItem="AX6-lc-4L0" secondAttribute="bottom" constant="403" id="0gE-nc-Q0E"/>
                             <constraint firstItem="AX6-lc-4L0" firstAttribute="top" secondItem="4ox-sv-1JS" secondAttribute="bottom" constant="74" id="G5d-Gd-UgV"/>
-                            <constraint firstItem="4ox-sv-1JS" firstAttribute="leading" secondItem="487-Ti-lkv" secondAttribute="leading" constant="171" id="Ijh-M8-2QQ"/>
+                            <constraint firstItem="4ox-sv-1JS" firstAttribute="leading" secondItem="487-Ti-lkv" secondAttribute="leading" constant="30" id="Ijh-M8-2QQ"/>
                             <constraint firstItem="4ox-sv-1JS" firstAttribute="top" secondItem="PGf-mI-gpC" secondAttribute="bottom" constant="51" id="Jt0-IQ-Y2S"/>
                             <constraint firstItem="487-Ti-lkv" firstAttribute="trailing" secondItem="AX6-lc-4L0" secondAttribute="trailing" constant="180" id="NGx-4R-1sr"/>
-                            <constraint firstItem="iYd-Xb-f3q" firstAttribute="leading" secondItem="487-Ti-lkv" secondAttribute="leading" constant="174" id="PyF-0d-KNY"/>
-                            <constraint firstItem="487-Ti-lkv" firstAttribute="trailing" secondItem="iYd-Xb-f3q" secondAttribute="trailing" constant="167" id="Y3S-uo-7sn"/>
-                            <constraint firstItem="PGf-mI-gpC" firstAttribute="leading" secondItem="487-Ti-lkv" secondAttribute="leading" constant="157" id="dNP-Su-CXr"/>
-                            <constraint firstItem="487-Ti-lkv" firstAttribute="trailing" secondItem="PGf-mI-gpC" secondAttribute="trailing" constant="162" id="jsC-A9-0OS"/>
+                            <constraint firstItem="iYd-Xb-f3q" firstAttribute="leading" secondItem="487-Ti-lkv" secondAttribute="leading" constant="30" id="PyF-0d-KNY"/>
+                            <constraint firstItem="487-Ti-lkv" firstAttribute="trailing" secondItem="iYd-Xb-f3q" secondAttribute="trailing" constant="30" id="Y3S-uo-7sn"/>
+                            <constraint firstItem="PGf-mI-gpC" firstAttribute="leading" secondItem="487-Ti-lkv" secondAttribute="leading" constant="30" id="dNP-Su-CXr"/>
+                            <constraint firstItem="487-Ti-lkv" firstAttribute="trailing" secondItem="PGf-mI-gpC" secondAttribute="trailing" constant="30" id="jsC-A9-0OS"/>
                             <constraint firstItem="AX6-lc-4L0" firstAttribute="top" secondItem="487-Ti-lkv" secondAttribute="top" constant="394" id="k6g-7u-CMp"/>
-                            <constraint firstItem="487-Ti-lkv" firstAttribute="trailing" secondItem="4ox-sv-1JS" secondAttribute="trailing" constant="170" id="rKl-89-iQ6"/>
+                            <constraint firstItem="487-Ti-lkv" firstAttribute="trailing" secondItem="4ox-sv-1JS" secondAttribute="trailing" constant="30" id="rKl-89-iQ6"/>
                             <constraint firstItem="iYd-Xb-f3q" firstAttribute="top" secondItem="AX6-lc-4L0" secondAttribute="bottom" constant="89" id="yZD-9m-jZz"/>
                             <constraint firstItem="AX6-lc-4L0" firstAttribute="leading" secondItem="487-Ti-lkv" secondAttribute="leading" constant="181" id="zfl-Zt-I82"/>
                         </constraints>

@@ -124,5 +124,63 @@ extension SettingViewController: UIDocumentPickerDelegate {
   
   func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
     print(#function)
+    
+    // 복구2. 선택한 파일에 대한 경로를 가져와야 한다
+    // ex. iphone/keen/fileapp/archive.zip
+    // ~~~~~/document/ <- 여기 뒤에 archive.zip을 붙여준다.
+    guard let selectedFileURL = urls.first else { return }
+    
+    let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first! // 도큐먼트 위치
+    
+    let sandboxFileURL = directory.appendingPathComponent(selectedFileURL.lastPathComponent) // 도큐먼트 위치에 file의 마지막요소 (즉, 파일이름)을 붙여주겠다
+    
+    // 복구3. 압축해제
+    if FileManager.default.fileExists(atPath: sandboxFileURL.path) {
+      // 기존에 복구하고자 하는 zip 파일이 도큐먼트에 있다면 -> 바로 압축을 해제해줘라
+      do {
+        let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentDirectory.appendingPathComponent("archive.zip") // 도큐먼트 위치에 파일 이름 추가
+        
+        try Zip.unzipFile(
+          fileURL,
+          destination: documentDirectory,
+          overwrite: true,
+          password: nil,
+          progress: { progress in
+            print("progress: \(progress)")
+            // 복구가 완료되었다는 alert or 앱을 재시작해달라는 alert
+          }, fileOutputHandler: { unzippedFile in
+            print("unzippedFile: \(unzippedFile)")
+          }
+        )
+      } catch {
+        print("unzip failed.")
+      }
+    } else {
+      // 이 경로에 파일이 없다면 -> 여기로 파일을 옮겨줘라
+      // 파일 앱의 zip -> 도큐먼트 폴더에 복사
+      do {
+        try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
+        
+        // TODO: 여기서 부터는 if문과 동일
+        let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentDirectory.appendingPathComponent("archive.zip") // 도큐먼트 위치에 파일 이름 추가
+        
+        try Zip.unzipFile(
+          fileURL,
+          destination: documentDirectory,
+          overwrite: true,
+          password: nil,
+          progress: { progress in
+            print("progress: \(progress)")
+            // 복구가 완료되었다는 alert or 앱을 재시작해달라는 alert
+          }, fileOutputHandler: { unzippedFile in
+            print("unzippedFile: \(unzippedFile)")
+          }
+        )
+      } catch {
+        print("error")
+      }
+    }
   }
 }
