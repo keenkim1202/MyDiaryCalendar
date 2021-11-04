@@ -26,7 +26,7 @@ class SearchViewController: UIViewController {
     tableView.dataSource = self
     
     tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryTitle", ascending: false)
-//    print("Realm Location: ", localRealm.configuration.fileURL)
+    print("Realm Location: ", localRealm.configuration.fileURL ?? "cannot find locaation.")
 //    print("tasks: \(tasks)")
   }
   
@@ -76,10 +76,10 @@ extension SearchViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let contentStoryboard = UIStoryboard.init(name: "Content", bundle: nil)
     let vc = contentStoryboard.instantiateViewController(withIdentifier: "addVC") as! AddViewController
-    
+  
     let selectedDiary = tasks[indexPath.row]
     vc.diary = selectedDiary
-    
+
     let nav = UINavigationController(rootViewController: vc)
     nav.modalPresentationStyle = .fullScreen
     self.present(nav, animated: true, completion: nil)

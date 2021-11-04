@@ -13,7 +13,7 @@ class AddViewController: UIViewController {
   // MARK: Enum
   enum ViewType {
     case add
-    case udpate
+    case update
   }
   
   // MARK: Properties
@@ -32,6 +32,7 @@ class AddViewController: UIViewController {
     super.viewDidLoad()
     
     if let diary = diary {
+      viewType = .update
       title = "일기 수정"
       titleTextField.text = diary.diaryTitle
       contentTextField.text = diary.content
@@ -53,9 +54,26 @@ class AddViewController: UIViewController {
       writtenDate: Date(), regDate: Date()
     )
     
-    try! localRealm.write {
-      localRealm.add(task)
-      saveImageToDocumentDirectory(imageName: "\(task._id).jpg", image: contentImageView.image!)
+    print("VT: ", viewType)
+    if viewType == .update {
+      try! localRealm.write {
+        localRealm.create(
+          UserDiary.self,
+          value: ["_id": diary!._id,
+                  "diaryTitle": task.diaryTitle,
+                  "content": task.content ?? "내용없음",
+                  "writtenDate": Date(),
+                  "regDate": Date()],
+          update: .modified
+        )
+      }
+      print("UPDATED")
+    } else {
+      try! localRealm.write {
+        localRealm.add(task)
+        saveImageToDocumentDirectory(imageName: "\(task._id).jpg", image: contentImageView.image!)
+      }
+      print("ADDED")
     }
     self.dismiss(animated: true, completion: nil)
   }
