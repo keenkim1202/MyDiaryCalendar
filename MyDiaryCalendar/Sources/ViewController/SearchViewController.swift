@@ -38,7 +38,6 @@ class SearchViewController: UIViewController {
   }
   
   // MARK: Load Ducument
-  // 도큐먼트 폴더 경로 -> 이미지 찾기 -> UIImage -< UIImageView
   func loadImageFromDocumentDirectory(imageName: String) -> UIImage? {
     let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
     let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
