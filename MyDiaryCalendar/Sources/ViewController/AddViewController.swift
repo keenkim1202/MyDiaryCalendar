@@ -24,9 +24,16 @@ class AddViewController: UIViewController {
   var viewType: ViewType = .add
   var diary: UserDiary?
   
+  let formatter:  DateFormatter = {
+    let df = DateFormatter()
+    df.dateFormat = "yyyy년 MM월 dd일"
+    return df
+  }()
+  
+  
   //MARK: UI
   @IBOutlet weak var titleTextField: UITextField!
-  @IBOutlet weak var datePicker: UIButton!
+  @IBOutlet weak var datePickerButton: UIButton!
   @IBOutlet weak var contentTextField: UITextView!
   @IBOutlet weak var contentImageView: UIImageView!
   
@@ -105,9 +112,11 @@ class AddViewController: UIViewController {
   }
   
   @objc func onSave() {
+    guard let date = datePickerButton.currentTitle, let value = formatter.date(from: date) else { return }
+    print("saveButton value = \(value)")
     let task = UserDiary(
       diaryTitle: titleTextField.text!, content: contentTextField.text!,
-      writtenDate: Date(), regDate: Date()
+      writtenDate: value, regDate: Date()
     )
     
     if viewType == .update {
@@ -117,7 +126,7 @@ class AddViewController: UIViewController {
           value: ["_id": diary!._id,
                   "diaryTitle": task.diaryTitle,
                   "content": task.content ?? "내용없음",
-                  "writtenDate": Date(),
+                  "writtenDate": value,
                   "regDate": Date()],
           update: .modified
         )
@@ -156,7 +165,27 @@ class AddViewController: UIViewController {
   
   // MARK: - Actions
   @IBAction func onDatePickerButton(_ sender: UIButton) {
+    // alert custom
+    guard let contentView = self.storyboard?.instantiateViewController(withIdentifier: "datePickerVC") as? DatePickerViewController else { return }
+    contentView.preferredContentSize.height = 200
     
+    let alert = UIAlertController(title: "날짜 선택", message: "날짜를 선택해주세요", preferredStyle: .alert)
+    alert.setValue(contentView, forKey: "contentViewController")
+    
+    let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+    let ok = UIAlertAction(title: "확인", style: .default) { _ in
+      let formatter = DateFormatter()
+      formatter.dateFormat = "yyyy년 MM월 dd일"
+      let value = formatter.string(from: contentView.datePicker.date)
+      
+      // 확인 버튼을 눌렀을 떄 버튼의 타이틀 변경
+      print("datePicker Button value: \(value)")
+      self.datePickerButton.setTitle("\(value)", for: .normal)
+    }
+    
+    alert.addAction(cancel)
+    alert.addAction(ok)
+    self.present(alert, animated: true, completion: nil)
   }
 }
 
@@ -167,6 +196,7 @@ extension AddViewController : UIImagePickerControllerDelegate, UINavigationContr
       contentImageView.image = image
       print(info)
     }
+    
     dismiss(animated: true, completion: nil)
   }
 }

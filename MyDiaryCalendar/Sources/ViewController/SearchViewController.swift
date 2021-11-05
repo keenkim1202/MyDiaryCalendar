@@ -13,6 +13,11 @@ class SearchViewController: UIViewController {
   // MARK: Realm
   let localRealm = try! Realm()
   var tasks: Results<UserDiary>!
+  let formatter:  DateFormatter = {
+    let df = DateFormatter()
+    df.dateFormat = "yyyy년 MM월 dd일"
+    return df
+  }()
 
   // MARK: UI
   @IBOutlet weak var tableView: UITableView!
@@ -94,10 +99,10 @@ extension SearchViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier) as? SearchTableViewCell else { return UITableViewCell() }
     let row = tasks[indexPath.row]
-    
+    let date = formatter.string(from: row.writtenDate)
     cell.dirayImageView.image = loadImageFromDocumentDirectory(imageName: "\(row._id).jpg")
     cell.titleLabel.text = row.diaryTitle
-    cell.dateLabel.text = "\(row.writtenDate)"
+    cell.dateLabel.text = "\(date)"
     cell.contentLabel.text = row.content
     
     cell.cellConfigure()

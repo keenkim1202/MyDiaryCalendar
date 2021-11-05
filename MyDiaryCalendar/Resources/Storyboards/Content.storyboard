@@ -69,13 +69,42 @@
                     <connections>
                         <outlet property="contentImageView" destination="Ctc-8J-4Hw" id="eDR-7j-vnl"/>
                         <outlet property="contentTextField" destination="zup-Nd-LCD" id="9mT-16-Ez3"/>
-                        <outlet property="datePicker" destination="wwA-7H-LTH" id="css-TL-4lc"/>
+                        <outlet property="datePickerButton" destination="wwA-7H-LTH" id="Vj0-A7-DcO"/>
                         <outlet property="titleTextField" destination="crX-8a-qQf" id="UCf-7Z-K0K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133" y="119"/>
+        </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="lwK-Zi-fTN">
+            <objects>
+                <viewController storyboardIdentifier="datePickerVC" id="faM-IG-lGz" customClass="DatePickerViewController" customModule="MyDiaryCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="92U-nU-xPJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="p61-D4-zN4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ahn-rT-3Eq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p61-D4-zN4" firstAttribute="trailing" secondItem="ahn-rT-3Eq" secondAttribute="trailing" id="K7u-Ox-Mb5"/>
+                            <constraint firstItem="p61-D4-zN4" firstAttribute="top" secondItem="ahn-rT-3Eq" secondAttribute="top" id="LgG-TD-Cc1"/>
+                            <constraint firstItem="p61-D4-zN4" firstAttribute="leading" secondItem="ahn-rT-3Eq" secondAttribute="leading" id="aEu-i1-3cT"/>
+                            <constraint firstItem="ahn-rT-3Eq" firstAttribute="bottom" secondItem="p61-D4-zN4" secondAttribute="bottom" id="mli-Pf-9gN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="p61-D4-zN4" id="oIo-ER-Dcl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cjp-wk-Dwd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="119"/>
         </scene>
     </scenes>
     <resources>
