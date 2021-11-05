@@ -11,23 +11,29 @@
         <!--캘린더-->
         <scene sceneID="qgN-1u-Piu">
             <objects>
-                <viewController id="84G-i3-JSo" customClass="CalendarViewController" customModule="MyDiaryCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="calendarVC" id="84G-i3-JSo" customClass="CalendarViewController" customModule="MyDiaryCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vUe-PZ-QXR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calendar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3W-Vc-XMW">
-                                <rect key="frame" x="173" y="438" width="69" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcp-3V-BDH" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="44" width="414" height="414"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Q6-zK-6KR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gcp-3V-BDH" firstAttribute="top" secondItem="4Q6-zK-6KR" secondAttribute="top" id="6Gf-lZ-wfe"/>
+                            <constraint firstItem="gcp-3V-BDH" firstAttribute="leading" secondItem="4Q6-zK-6KR" secondAttribute="leading" id="KIN-Sl-oht"/>
+                            <constraint firstItem="4Q6-zK-6KR" firstAttribute="trailing" secondItem="gcp-3V-BDH" secondAttribute="trailing" id="Zp0-kT-uXI"/>
+                            <constraint firstItem="4Q6-zK-6KR" firstAttribute="width" secondItem="gcp-3V-BDH" secondAttribute="height" multiplier="1:1" id="bhZ-4k-9uX"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="캘린더" image="calendar" catalog="system" id="wsc-VP-VcE"/>
+                    <connections>
+                        <outlet property="calendarView" destination="gcp-3V-BDH" id="ZlF-re-BCP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aD4-Lv-pkb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

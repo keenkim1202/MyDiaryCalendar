@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1C12585B27336DCC008BC69F /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 1C12585A27336DCC008BC69F /* Zip */; };
+		1C19247A2734BC3900E4FE17 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1924792734BC3900E4FE17 /* DatePickerViewController.swift */; };
+		1C19247D2734C0F400E4FE17 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 1C19247C2734C0F400E4FE17 /* FSCalendar */; };
 		1C435D9D272FD9EF001849AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C435D9C272FD9EF001849AE /* AppDelegate.swift */; };
 		1C435D9F272FD9EF001849AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C435D9E272FD9EF001849AE /* SceneDelegate.swift */; };
 		1C435DA4272FD9EF001849AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C435DA2272FD9EF001849AE /* Main.storyboard */; };
@@ -34,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C1924792734BC3900E4FE17 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		1C435D99272FD9EF001849AE /* MyDiaryCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDiaryCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C435D9C272FD9EF001849AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C435D9E272FD9EF001849AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C12585B27336DCC008BC69F /* Zip in Frameworks */,
+				1C19247D2734C0F400E4FE17 /* FSCalendar in Frameworks */,
 				1CC3C7C02730C7410039135A /* RealmSwift in Frameworks */,
 				1CC3C7BE2730C7410039135A /* Realm in Frameworks */,
 			);
@@ -151,6 +155,7 @@
 				1C435DC3272FDB27001849AE /* SearchViewController.swift */,
 				1C435DC5272FDB2F001849AE /* SettingViewController.swift */,
 				1CC3C7C42730D1480039135A /* SearchTableViewCell.swift */,
+				1C1924792734BC3900E4FE17 /* DatePickerViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				1CC3C7BD2730C7410039135A /* Realm */,
 				1CC3C7BF2730C7410039135A /* RealmSwift */,
 				1C12585A27336DCC008BC69F /* Zip */,
+				1C19247C2734C0F400E4FE17 /* FSCalendar */,
 			);
 			productName = MyDiaryCalendar;
 			productReference = 1C435D99272FD9EF001849AE /* MyDiaryCalendar.app */;
@@ -229,6 +235,7 @@
 			packageReferences = (
 				1CC3C7BC2730C7410039135A /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				1C12585927336DCC008BC69F /* XCRemoteSwiftPackageReference "Zip" */,
+				1C19247B2734C0F400E4FE17 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 1C435D9A272FD9EF001849AE /* Products */;
 			projectDirPath = "";
@@ -269,6 +276,7 @@
 				1C435DC2272FDB20001849AE /* CalendarViewController.swift in Sources */,
 				1C435DC4272FDB27001849AE /* SearchViewController.swift in Sources */,
 				1C435DC0272FDB1A001849AE /* HomeViewController.swift in Sources */,
+				1C19247A2734BC3900E4FE17 /* DatePickerViewController.swift in Sources */,
 				1CC3C7C32730C9B80039135A /* RealmModel.swift in Sources */,
 				1C435DC6272FDB2F001849AE /* SettingViewController.swift in Sources */,
 				1C435D9D272FD9EF001849AE /* AppDelegate.swift in Sources */,
@@ -524,6 +532,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		1C19247B2734C0F400E4FE17 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		1CC3C7BC2730C7410039135A /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
@@ -539,6 +555,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1C12585927336DCC008BC69F /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
+		};
+		1C19247C2734C0F400E4FE17 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C19247B2734C0F400E4FE17 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 		1CC3C7BD2730C7410039135A /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
