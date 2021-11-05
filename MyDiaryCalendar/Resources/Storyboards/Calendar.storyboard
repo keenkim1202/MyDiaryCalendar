@@ -20,18 +20,28 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="414"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTf-1g-Ueo">
+                                <rect key="frame" x="30" y="488" width="354" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Q6-zK-6KR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="VTf-1g-Ueo" firstAttribute="top" secondItem="gcp-3V-BDH" secondAttribute="bottom" constant="30" id="136-CQ-WOH"/>
                             <constraint firstItem="gcp-3V-BDH" firstAttribute="top" secondItem="4Q6-zK-6KR" secondAttribute="top" id="6Gf-lZ-wfe"/>
                             <constraint firstItem="gcp-3V-BDH" firstAttribute="leading" secondItem="4Q6-zK-6KR" secondAttribute="leading" id="KIN-Sl-oht"/>
+                            <constraint firstItem="4Q6-zK-6KR" firstAttribute="trailing" secondItem="VTf-1g-Ueo" secondAttribute="trailing" constant="30" id="YCs-9a-58i"/>
                             <constraint firstItem="4Q6-zK-6KR" firstAttribute="trailing" secondItem="gcp-3V-BDH" secondAttribute="trailing" id="Zp0-kT-uXI"/>
                             <constraint firstItem="4Q6-zK-6KR" firstAttribute="width" secondItem="gcp-3V-BDH" secondAttribute="height" multiplier="1:1" id="bhZ-4k-9uX"/>
+                            <constraint firstItem="VTf-1g-Ueo" firstAttribute="leading" secondItem="4Q6-zK-6KR" secondAttribute="leading" constant="30" id="u5Z-qX-jrR"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="캘린더" image="calendar" catalog="system" id="wsc-VP-VcE"/>
                     <connections>
+                        <outlet property="allCountLabel" destination="VTf-1g-Ueo" id="7N9-nP-KRW"/>
                         <outlet property="calendarView" destination="gcp-3V-BDH" id="ZlF-re-BCP"/>
                     </connections>
                 </viewController>

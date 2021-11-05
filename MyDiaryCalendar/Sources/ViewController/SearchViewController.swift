@@ -8,6 +8,8 @@
 import UIKit
 import RealmSwift
 
+// TODO: SearchBar 추가해보기
+
 class SearchViewController: UIViewController {
   
   // MARK: Realm
