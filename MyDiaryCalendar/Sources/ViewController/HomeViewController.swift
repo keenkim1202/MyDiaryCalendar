@@ -9,6 +9,15 @@ import UIKit
 
 class HomeViewController: UIViewController {
   
+  // MARK: - Properties
+  let array = [ // dummy data
+    "안녕하세요".map{ String($0) },
+    Array(repeating: "b", count: 10),
+    Array(repeating: "c", count: 10),
+    Array(repeating: "d", count: 10),
+    Array(repeating: "e", count: 10)
+  ]
+  
   // MARK: - UI
   @IBOutlet weak var tableView: UITableView!
   
@@ -38,19 +47,19 @@ class HomeViewController: UIViewController {
 // MARK: - UITableViewDelegate & UITableViewDataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 10
+    return array.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier) as? HomeTableViewCell else { return UITableViewCell() }
-    cell.collectionView.delegate = self
-    cell.collectionView.dataSource = self
     cell.collectionView.tag = indexPath.row
     cell.collectionView.isPagingEnabled = true
     cell.collectionView.reloadData()
     
-    cell.categoryLabel.backgroundColor = .yellow
-    cell.collectionView.backgroundColor = .lightGray
+    cell.data = array[indexPath.row]
+    cell.categoryLabel.text = "\(array[indexPath.row])"
+    
+    cell.categoryLabel.backgroundColor = .black
     return cell
   }
   
@@ -58,50 +67,4 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     return indexPath.row == 1 ? 300 : 170
   }
   
-}
-
-// MARK: - UICollectionViewDelegate & UICollectionViewDataSource
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    print(collectionView.tag)
-  }
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 20
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else { return UICollectionViewCell() }
-    cell.imageView.backgroundColor = .brown
-    return cell
-  }
-}
-
-// MARK: - UICollectionViewFlowLayout
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    
-    // tableView cell의 indexPath 정보 가져오기
-    if collectionView.tag == 0 {
-      return CGSize(width: UIScreen.main.bounds.width, height: 100)
-    } else {
-      return CGSize(width: 150, height: 100)
-    }
-    
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    if collectionView.tag == 0 {
-      return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    } else {
-      return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
-    }
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    return collectionView.tag == 0 ? 0 : 10
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    return collectionView.tag == 0 ? 0 : 10
-  }
 }
