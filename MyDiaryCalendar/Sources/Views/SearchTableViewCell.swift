@@ -16,8 +16,14 @@ class SearchTableViewCell: UITableViewCell {
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var contentLabel: UILabel!
   
-  func cellConfigure() {
+  func cellConfigure(row: UserDiary) {
     dirayImageView.layer.cornerRadius = CGFloat(8)
     dirayImageView.backgroundColor = .blue
+    
+    let date = DateFormatter.customFormat.string(from: row.writtenDate)
+
+    titleLabel.text = row.diaryTitle
+    dateLabel.text = "\(date)"
+    contentLabel.text = row.content
   }
 }

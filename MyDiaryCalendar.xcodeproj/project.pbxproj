@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C0F32632738FF3D00706797 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F32622738FF3D00706797 /* HomeTableViewCell.swift */; };
+		1C0F32652739037A00706797 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F32642739037A00706797 /* HomeCollectionViewCell.swift */; };
 		1C12585B27336DCC008BC69F /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 1C12585A27336DCC008BC69F /* Zip */; };
 		1C19247A2734BC3900E4FE17 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1924792734BC3900E4FE17 /* DatePickerViewController.swift */; };
 		1C19247D2734C0F400E4FE17 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 1C19247C2734C0F400E4FE17 /* FSCalendar */; };
@@ -42,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C0F32622738FF3D00706797 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		1C0F32642739037A00706797 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		1C1924792734BC3900E4FE17 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		1C19247E2734CE7200E4FE17 /* RealmQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmQuery.swift; sourceTree = "<group>"; };
 		1C1924812734D02C00E4FE17 /* Date++Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date++Extension.swift"; sourceTree = "<group>"; };
@@ -91,6 +95,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C0F32612738FEEC00706797 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1CC3C7C42730D1480039135A /* SearchTableViewCell.swift */,
+				1C0F32622738FF3D00706797 /* HomeTableViewCell.swift */,
+				1C0F32642739037A00706797 /* HomeCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1C1924802734D01E00E4FE17 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +154,7 @@
 		1C435DB1272FD9FE001849AE /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				1C0F32612738FEEC00706797 /* Views */,
 				1C1924802734D01E00E4FE17 /* Extension */,
 				1CC3C7C12730C9AD0039135A /* Realm */,
 				1C435D9C272FD9EF001849AE /* AppDelegate.swift */,
@@ -179,7 +194,6 @@
 				1C435DC1272FDB20001849AE /* CalendarViewController.swift */,
 				1C435DC3272FDB27001849AE /* SearchViewController.swift */,
 				1C435DC5272FDB2F001849AE /* SettingViewController.swift */,
-				1CC3C7C42730D1480039135A /* SearchTableViewCell.swift */,
 				1C1924792734BC3900E4FE17 /* DatePickerViewController.swift */,
 			);
 			path = ViewController;
@@ -301,9 +315,11 @@
 				1C1924842734D03B00E4FE17 /* UIFont++Extension.swift in Sources */,
 				1C435DC8272FDB61001849AE /* AddViewController.swift in Sources */,
 				1C1924822734D02C00E4FE17 /* Date++Extension.swift in Sources */,
+				1C0F32652739037A00706797 /* HomeCollectionViewCell.swift in Sources */,
 				1C435DC2272FDB20001849AE /* CalendarViewController.swift in Sources */,
 				1C1924882734D05500E4FE17 /* UIViewController++Extension.swift in Sources */,
 				1C435DC4272FDB27001849AE /* SearchViewController.swift in Sources */,
+				1C0F32632738FF3D00706797 /* HomeTableViewCell.swift in Sources */,
 				1C435DC0272FDB1A001849AE /* HomeViewController.swift in Sources */,
 				1C19247A2734BC3900E4FE17 /* DatePickerViewController.swift in Sources */,
 				1CC3C7C32730C9B80039135A /* RealmModel.swift in Sources */,
