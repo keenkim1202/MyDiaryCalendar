@@ -47,6 +47,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     cell.collectionView.dataSource = self
     cell.collectionView.tag = indexPath.row
     cell.collectionView.isPagingEnabled = true
+    cell.collectionView.reloadData()
     
     cell.categoryLabel.backgroundColor = .yellow
     cell.collectionView.backgroundColor = .lightGray
