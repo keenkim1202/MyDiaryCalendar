@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
-    UILabel.appearance().textColor = .darkGray
+    UILabel.appearance().textColor = .white
     UILabel.appearance().font = .boldSystemFont(ofSize: 20)
     UILabel.appearance().textAlignment = .center
     
