@@ -52,14 +52,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier) as? HomeTableViewCell else { return UITableViewCell() }
+    
     cell.collectionView.tag = indexPath.row
-    cell.collectionView.isPagingEnabled = true
-    cell.collectionView.reloadData()
-    
-    cell.data = array[indexPath.row]
-    cell.categoryLabel.text = "\(array[indexPath.row])"
-    
     cell.categoryLabel.backgroundColor = .black
+    cell.data = array[indexPath.row]
     return cell
   }
   

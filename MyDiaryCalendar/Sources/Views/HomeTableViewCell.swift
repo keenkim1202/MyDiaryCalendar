@@ -11,7 +11,12 @@ class HomeTableViewCell: UITableViewCell {
   
   static let identifier: String = "homeTableViewCell"
   
-  var data: [String] = []
+  var data: [String] = [] {
+    didSet {
+      categoryLabel.text = "\(data.count)개"
+      collectionView.reloadData()
+    }
+  }
   
   @IBOutlet weak var categoryLabel: UILabel!
   @IBOutlet weak var collectionView: UICollectionView!
@@ -21,6 +26,7 @@ class HomeTableViewCell: UITableViewCell {
     
     collectionView.delegate = self
     collectionView.dataSource = self
+    collectionView.isPagingEnabled = true
   }
 
 }
